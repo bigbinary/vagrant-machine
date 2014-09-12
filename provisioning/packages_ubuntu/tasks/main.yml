@@ -1,0 +1,44 @@
+---
+- name: Installing packages like curl, git, tree etc
+  sudo: yes
+  apt: pkg={{ item }} state=installed update_cache=yes
+  with_items:
+      - ack
+      - curl
+      - git
+      - make
+      - tree
+      - nodejs
+      - build-essential
+      - libxslt-dev
+      - libxml2-dev
+      - imagemagick
+      - libmagickcore-dev
+      - libmagickwand-dev
+
+
+- name: Installing rvm
+  sudo: no
+  shell: "curl -sSL https://get.rvm.io | bash"
+
+- name: Installing ruby
+  sudo: no
+  shell: "/home/vagrant/.rvm/bin/rvm install ruby-2.1.2"
+
+- name: Downloading phantomjs tar file
+  sudo: no
+  shell: "wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2"
+  args:
+    chdir: /home/vagrant
+
+- name: tar phantomjs
+  sudo: no
+  shell: "tar xjf /home/vagrant/phantomjs-1.9.7-linux-x86_64.tar.bz2"
+
+- name: Installing phantomjs
+  sudo: yes
+  shell: "sudo ln -s /home/vagrant/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs"
+  shell: "sudo ln -s /home/vagrant/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs"
+  shell: "sudo ln -s /home/vagrant/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/bin/phantomjs"
+
+

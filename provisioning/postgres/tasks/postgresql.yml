@@ -1,0 +1,92 @@
+---
+
+#Got from:http://blog.wercker.com/2013/11/25/django-16-part3.html
+- name: test for locale settings...
+  command: locale
+  register: locale_output
+  changed_when: False
+
+- name: set locale to {{locale}}
+  command: /usr/sbin/update-locale LANG={{locale}} LC_ALL={{locale}} LANGUAGE={{locale}}
+  when: "'LC_ALL={{locale}}' not in locale_output.stdout"
+  sudo: yes
+
+- name: update apt cache (if out of date)
+  #Updates it only every 4 hours
+  apt: update_cache=yes cache_valid_time={{ 60*60*4 }}
+  sudo: true
+
+- name: install prerequisites
+  sudo: true
+  #This installs/upgrades every item
+  apt: name={{ item }} state=latest
+  with_items:
+    - libpq-dev
+    - python-psycopg2
+  tags:
+    - packages
+
+- name: Install Postgresql server and client
+  apt: pkg={{ item }}-{{ postgresql.version }} state=installed
+  register: postgresql_install
+  with_items:
+    - postgresql
+    - postgresql-contrib
+  tags:
+    - packages
+
+- name: Install development header files
+  apt: pkg={{ item }} state=installed
+  when: postgresql.install_development_headers == true
+  with_items:
+    - libpq-dev
+  tags:
+    - packages
+
+- name: Install PostgreSQL Host-Based-Authentication file
+  template: src=pg_hba.conf.j2
+            dest=/etc/postgresql/{{ postgresql.version }}/main/pg_hba.conf
+            owner={{ postgresql.user }} group={{ postgresql.group }}
+  notify: restart postgresql
+  tags:
+    - configuration
+
+- name: Install PostgreSQL config file
+  template: src=postgresql.conf
+            dest=/etc/postgresql/{{ postgresql.version }}/main/postgresql.conf
+            owner={{ postgresql.user }} group={{ postgresql.group }}
+  notify:
+    - restart postgresql
+  tags:
+    - configuration
+
+#Make sure that it's restarted if it needs to be
+- meta: flush_handlers
+
+- name: start postgresql and configure to startup automatically
+  service: name=postgresql state=started enabled=yes
+  register: started
+  tags: postgresql
+
+- name: wait for postgresql restart
+  command: sleep 2
+  when: started.changed
+  tags: postgresql
+
+- name: create the default postgresql user
+  postgresql_user: name={{postgresql.pg_username}} password={{postgresql.pg_password}} login_user=postgres role_attr_flags=CREATEDB,SUPERUSER
+  sudo_user: postgres
+  tags: postgresql
+
+- name: test for server instrumentation
+  command: psql -c 'select * from pg_extension;' -t -A
+  sudo_user: postgres
+  register: server_instrumentation
+  changed_when: False
+
+- name: install server instrumentation
+  command: psql -c 'CREATE EXTENSION adminpack;' -t -A
+  sudo_user: postgres
+  when: "'adminpack' not in server_instrumentation.stdout"
+
+
