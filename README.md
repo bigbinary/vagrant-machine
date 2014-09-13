@@ -37,8 +37,13 @@ SELECT table_name FROM information_schema.tables WHERE table_schema='public';
 
 * rvm
 * PostgreSQL
+* imagemagick
+* phantomjs
+* nodejs
 * curl
 * git
+* ack
+* tree
 * custom command prompt
 
 and some more. Complete list is [here]() .
