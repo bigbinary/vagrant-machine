@@ -66,3 +66,32 @@
   shell: git config --global branch.autosetuprebase always
   shell: git config --global push.default current
   shell: git config --global core.mergeoptions --no-edit
+
+- name: Setting up git command completion in bash
+  shell: "curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o /home/vagrant/.git-completion.bash"
+  args:
+    creates: /home/vagrant/.git-completion.bash
+
+- name: Configuring command prompt
+  sudo: no
+  shell: "wget https://raw.githubusercontent.com/neerajdotname/dotfiles/master/bash/command_prompt.sh"
+  args:
+    chdir: /home/vagrant
+    creates: /home/vagrant/command_prompt.sh
+
+- name: Adding line in .bashrc regarding command prompt
+  lineinfile: dest=/home/vagrant/.bashrc line="source /home/vagrant/command_prompt.sh"
+
+- name: Downloading aliases from neerajdotname
+  sudo : no
+  shell: "wget https://raw.githubusercontent.com/neerajdotname/dotfiles/master/bash/bash_aliases.sh"
+  args:
+    chdir: /home/vagrant
+    creates: /home/vagrant/bash_aliases.sh
+
+
+- name: Make the aliases file executable
+  shell: "chmod a+x /home/vagrant/bash_aliases.sh"
+
+- name: Using the aliashes from neerajdotname
+  lineinfile: dest=/home/vagrant/.bashrc line="source /home/vagrant/bash_aliases.sh"
