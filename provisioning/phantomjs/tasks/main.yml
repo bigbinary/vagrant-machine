@@ -1,9 +1,9 @@
 ---
 - name: Downloading phantomjs tar file
   sudo: no
-  shell: "wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2"
+  shell: "curl https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2 -o /home/vagrant/phantomjs-1.9.7-linux-x86_64.tar.bz2
+ "
   args:
-    chdir: /home/vagrant
     creates: /home/vagrant/phantomjs-1.9.7-linux-x86_64.tar.bz2
 
 - name: tar phantomjs
