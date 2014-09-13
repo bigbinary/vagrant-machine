@@ -22,8 +22,5 @@
   args:
     creates: /home/vagrant/bash_aliases.sh
 
-- name: Making the aliases file executable
-  shell: "chmod a+x /home/vagrant/.aliases.bash"
-
 - name: Addling a line in .bashrc to enable bash aliases
   lineinfile: dest=/home/vagrant/.bashrc line="source /home/vagrant/.aliases.bash"
