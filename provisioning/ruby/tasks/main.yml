@@ -1,0 +1,24 @@
+---
+- name: Installing packages necessary for building ruby
+  sudo: yes
+  apt: pkg={{ item }} state=installed update_cache=yes
+  with_items:
+      - nodejs
+      - build-essential
+      - libxslt-dev
+      - libxml2-dev
+      - imagemagick
+      - libmagickcore-dev
+      - libmagickwand-dev
+
+- name: Installing rvm
+  sudo: no
+  shell: "curl -sSL https://get.rvm.io | bash"
+  args:
+    creates: /home/vagrant/.rvm/bin/rvm
+
+- name: Installing ruby
+  sudo: no
+  shell: "/home/vagrant/.rvm/bin/rvm install ruby-2.1.2"
+  args:
+    creates: /home/vagrant/.rvm/rubies/ruby-2.1.2/bin/ruby

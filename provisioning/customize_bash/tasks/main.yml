@@ -1,0 +1,31 @@
+---
+- name: Setting up git command completion in bash
+  shell: "curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o /home/vagrant/.git-completion.bash"
+  args:
+    creates: /home/vagrant/.git-completion.bash
+
+- name: Adding a line in .bashrc to enable git command completion
+  lineinfile: dest=/home/vagrant/.bashrc line="source /home/vagrant/.git-completion.bash"
+
+- name: Downloading command_prompt.sh from neerajdotname profile
+  sudo: no
+  shell: "wget https://raw.githubusercontent.com/neerajdotname/dotfiles/master/bash/command_prompt.sh"
+  args:
+    chdir: /home/vagrant
+    creates: /home/vagrant/command_prompt.sh
+
+- name: Adding a line in .bashrc to enable command prompt customization
+  lineinfile: dest=/home/vagrant/.bashrc line="source /home/vagrant/command_prompt.sh"
+
+- name: Downloading aliases from neerajdotname profile
+  sudo : no
+  shell: "wget https://raw.githubusercontent.com/neerajdotname/dotfiles/master/bash/bash_aliases.sh"
+  args:
+    chdir: /home/vagrant
+    creates: /home/vagrant/bash_aliases.sh
+
+- name: Making the aliases file executable
+  shell: "chmod a+x /home/vagrant/bash_aliases.sh"
+
+- name: Addling a line in .bashrc to enable bash aliases
+  lineinfile: dest=/home/vagrant/.bashrc line="source /home/vagrant/bash_aliases.sh"
