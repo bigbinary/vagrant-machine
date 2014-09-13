@@ -9,23 +9,21 @@
 
 - name: Downloading command_prompt.sh from neerajdotname profile
   sudo: no
-  shell: "wget https://raw.githubusercontent.com/neerajdotname/dotfiles/master/bash/command_prompt.sh"
+  shell: "curl https://raw.githubusercontent.com/neerajdotname/dotfiles/master/bash/command_prompt.bash -o /home/vagrant/.command_prompt.bash"
   args:
-    chdir: /home/vagrant
-    creates: /home/vagrant/command_prompt.sh
+    creates: /home/vagrant/.command_prompt.bash
 
 - name: Adding a line in .bashrc to enable command prompt customization
-  lineinfile: dest=/home/vagrant/.bashrc line="source /home/vagrant/command_prompt.sh"
+  lineinfile: dest=/home/vagrant/.bashrc line="source /home/vagrant/.command_prompt.bash"
 
 - name: Downloading aliases from neerajdotname profile
   sudo : no
-  shell: "wget https://raw.githubusercontent.com/neerajdotname/dotfiles/master/bash/bash_aliases.sh"
+  shell: "curl https://raw.githubusercontent.com/neerajdotname/dotfiles/master/bash/aliases.bash -o /home/vagrant/.aliases.bash"
   args:
-    chdir: /home/vagrant
     creates: /home/vagrant/bash_aliases.sh
 
 - name: Making the aliases file executable
-  shell: "chmod a+x /home/vagrant/bash_aliases.sh"
+  shell: "chmod a+x /home/vagrant/.aliases.bash"
 
 - name: Addling a line in .bashrc to enable bash aliases
-  lineinfile: dest=/home/vagrant/.bashrc line="source /home/vagrant/bash_aliases.sh"
+  lineinfile: dest=/home/vagrant/.bashrc line="source /home/vagrant/.aliases.bash"
