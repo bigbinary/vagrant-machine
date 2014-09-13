@@ -4,3 +4,4 @@
 #Vagrant instance-specific stuff
 .vagrant
 *_inventory_database
+projects
