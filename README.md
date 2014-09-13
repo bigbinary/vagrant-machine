@@ -4,6 +4,7 @@ You'll need to have the following tools installed for this to work
 
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Vagrant](http://www.vagrantup.com/downloads.html)
+* [Ansible](http://docs.ansible.com/intro_installation.html)
 
 ## host machine vs guest machine
 
