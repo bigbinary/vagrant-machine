@@ -12,14 +12,14 @@
 
 - name: Installing phantomjs
   sudo: yes
-  shell: "sudo ln -s /home/vagrant/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs"
+  shell: "ln -s /home/vagrant/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs"
   args:
     creates: /usr/local/share/phantomjs
 
-  shell: "sudo ln -s /home/vagrant/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs"
+  shell: "ln -s /home/vagrant/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs"
   args:
     creates: /usr/local/bin/phantomjs
 
-  shell: "sudo ln -s /home/vagrant/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/bin/phantomjs"
+  shell: "ln -s /home/vagrant/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/bin/phantomjs"
   args:
     creates: /usr/bin/phantomjs
