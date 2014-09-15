@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "vmachine" do |cfg|
 
-    #cfg.vm.network :forwarded_port, guest: 3000, host:3000
+    cfg.vm.network :forwarded_port, guest: 3000, host:3000
 
     cfg.vm.host_name = "vagrant.machine"
 
