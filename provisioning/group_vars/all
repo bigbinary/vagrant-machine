@@ -3,6 +3,9 @@ locale: en_US.UTF-8
 ruby:
   version: 2.1.2
 
+phantomjs:
+  version: 1.9.7-linux-x86_64
+
 postgresql:
   version: 9.3
   repo: 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main'

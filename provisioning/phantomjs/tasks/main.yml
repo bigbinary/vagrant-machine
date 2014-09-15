@@ -1,25 +1,25 @@
 ---
 - name: Downloading phantomjs tar file
   sudo: no
-  shell: "wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2"
+  shell: "wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-{{ phantomjs.version }}.tar.bz2"
   args:
     chdir: /home/vagrant
-    creates: /home/vagrant/phantomjs-1.9.7-linux-x86_64.tar.bz2
+    creates: /home/vagrant/phantomjs-{{ phantomjs.version }}.tar.bz2
 
 - name: tar phantomjs
   sudo: no
-  shell: "tar xjf /home/vagrant/phantomjs-1.9.7-linux-x86_64.tar.bz2"
+  shell: "tar xjf /home/vagrant/phantomjs-{{ phantomjs.version }}.tar.bz2"
 
 - name: Installing phantomjs
   sudo: yes
-  shell: "ln -s /home/vagrant/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs"
+  shell: "ln -s /home/vagrant/phantomjs-{{ phantomjs.version }}/bin/phantomjs /usr/local/share/phantomjs"
   args:
     creates: /usr/local/share/phantomjs
 
-  shell: "ln -s /home/vagrant/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs"
+  shell: "ln -s /home/vagrant/phantomjs-{{ phantomjs.version }}/bin/phantomjs /usr/local/bin/phantomjs"
   args:
     creates: /usr/local/bin/phantomjs
 
-  shell: "ln -s /home/vagrant/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/bin/phantomjs"
+  shell: "ln -s /home/vagrant/phantomjs-{{ phantomjs.version }}/bin/phantomjs /usr/bin/phantomjs"
   args:
     creates: /usr/bin/phantomjs
