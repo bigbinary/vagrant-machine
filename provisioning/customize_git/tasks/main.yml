@@ -9,3 +9,4 @@
   shell: git config --global branch.autosetuprebase always
   shell: git config --global push.default current
   shell: git config --global core.mergeoptions --no-edit
+  shell: git config color.status always
