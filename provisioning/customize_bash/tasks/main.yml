@@ -31,3 +31,9 @@
   args:
     chdir: /home/vagrant
     creates: /home/vagrant/tiny_scripts/README.md
+
+- name: add tiny_scripts to PATH
+  sudo: no
+  lineinfile: dest=/home/vagrant/.bashrc
+              line='export PATH="/home/vagrant/tiny_scripts/scripts:$PATH"'
+
