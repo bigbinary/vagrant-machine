@@ -17,10 +17,17 @@
   lineinfile: dest=/home/vagrant/.bashrc line="source /home/vagrant/.command_prompt.bash"
 
 - name: Downloading aliases from neerajdotname profile
-  sudo : no
+  sudo: no
   shell: "curl https://raw.githubusercontent.com/neerajdotname/dotfiles/master/bash/aliases.bash -o /home/vagrant/.aliases.bash"
   args:
     creates: /home/vagrant/bash_aliases.sh
 
 - name: Addling a line in .bashrc to enable bash aliases
   lineinfile: dest=/home/vagrant/.bashrc line="source /home/vagrant/.aliases.bash"
+
+- name: clonig bigbinary/tiny_scripts
+  sudo: no
+  shell: "git clone https://github.com/bigbinary/tiny_scripts.git"
+  args:
+    chdir: /home/vagrant
+    creates: /home/vagrant/tiny_scripts/README.md
