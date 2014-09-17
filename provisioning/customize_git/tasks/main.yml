@@ -1,13 +1,15 @@
 ---
 - name: Customizing git
   sudo: no
-  shell: git config --global alias.co checkout
-  shell: git config --global color.branch auto
-  shell: git config --global color.diff auto
-  shell: git config --global color.interactive auto
-  shell: git config --global color.status auto
-  shell: git config --global branch.autosetuprebase always
-  shell: git config --global push.default current
-  shell: git config --global core.mergeoptions --no-edit
-  shell: git config --global color.status always
-  shell: git config --global color.ui auto
+  action: shell git config --global {{ item }}
+  with_items:
+    - alias.co checkout
+    - color.branch auto
+    - color.diff auto
+    - color.interactive auto
+    - color.status auto
+    - branch.autosetuprebase always
+    - push.default current
+    - core.mergeoptions --no-edit
+    - color.status always
+    - color.ui auto
