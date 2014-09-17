@@ -33,6 +33,13 @@ enter password:
 SELECT table_name FROM information_schema.tables WHERE table_schema='public';
 ```
 
+You should see result with zero row. It means postgres is wroking fine. Now to exit out of `psql` type `\q` and hit enter.
+
+```
+postgres=# \q
+```
+
+
 ## Installations on the guest machine
 
 * rvm
