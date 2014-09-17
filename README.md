@@ -53,5 +53,3 @@ postgres=# \q
 * tree
 * custom command prompt
 
-and some more. Complete list is [here]() .
-
