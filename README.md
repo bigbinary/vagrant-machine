@@ -59,5 +59,6 @@ postgres=# \q
 * git
 * ack
 * tree
+* git bash completion
 * custom command prompt
 
