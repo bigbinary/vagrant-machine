@@ -2,10 +2,10 @@
 ## Table of Contents
 
 * [Dependencies](#dependencies)
-* [Host vs Guest](#)
-* [Setting up machine using vagrant](#command-reference)
-* [Verify postgres is working](#command-reference)
-* [Installations](#command-reference)
+* [Host vs Guest](#host-machine-vs-guest-machine)
+* [Setting up machine using vagrant](#setting-up-the-guest-machine-using-vagrant)
+* [Verify postgres is working](#verify-that-postgresql-is-working)
+* [Installations](#installations-on-the-guest-machine)
 
 ## Dependencies
 
