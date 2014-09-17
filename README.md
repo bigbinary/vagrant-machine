@@ -1,3 +1,12 @@
+
+## Table of Contents
+
+* [Dependencies](#dependencies)
+* [Host vs Guest](#)
+* [Setting up machine using vagrant](#command-reference)
+* [Verify postgres is working](#command-reference)
+* [Installations](#command-reference)
+
 ## Dependencies
 
 You'll need to have the following tools installed for this to work
