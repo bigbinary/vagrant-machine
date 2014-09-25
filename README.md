@@ -62,4 +62,4 @@ postgres=# \q
 * git bash completion
 * custom command prompt
 * [bashmarks](https://github.com/huyng/bashmarks)
-
+* [Heroku toolbelt](https://toolbelt.heroku.com)
