@@ -50,17 +50,17 @@ postgres=# \q
 
 ### Installations on the guest machine
 
-* rvm
-* PostgreSQL
-* imagemagick
-* phantomjs
-* nodejs
-* curl
-* git
-* ack
-* tree
-* git bash completion
-* custom command prompt
+* [rvm](http://rvm.io)
+* [PostgreSQL](http://www.postgresql.org)
+* [ImageMagick](http://www.imagemagick.org)
+* [PhantomJS](http://phantomjs.org)
+* [Node.js](http://nodejs.org)
+* [curl](http://curl.haxx.se)
+* [git](http://git-scm.com)
+* [ack](http://beyondgrep.com)
+* [tree](http://linux.die.net/man/1/tree)
+* [git bash completion](https://github.com/git/git/blob/master/contrib/completion/git-completion.bash)
+* [custom command prompt](https://github.com/neerajdotname/dotfiles/blob/master/bash/command_prompt.bash)
 * [memcached](http://memcached.org)
 * [bashmarks](https://github.com/huyng/bashmarks)
 * [Heroku toolbelt](https://toolbelt.heroku.com)
