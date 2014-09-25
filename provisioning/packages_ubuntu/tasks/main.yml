@@ -15,3 +15,7 @@
       - imagemagick
       - libmagickcore-dev
       - libmagickwand-dev
+
+- name: Installing heroku toolbelt
+  sudo: no
+  shell: "wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh"
