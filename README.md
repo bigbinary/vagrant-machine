@@ -61,4 +61,5 @@ postgres=# \q
 * tree
 * git bash completion
 * custom command prompt
+* [bashmarks](https://github.com/huyng/bashmarks)
 

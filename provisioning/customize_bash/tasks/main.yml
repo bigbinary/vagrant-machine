@@ -37,3 +37,18 @@
   lineinfile: dest=/home/vagrant/.bashrc
               line='export PATH="/home/vagrant/tiny_scripts/scripts:$PATH"'
 
+- name: clone bashmarks repository
+  sudo: no
+  shell: "git clone git://github.com/huyng/bashmarks.git"
+  args:
+    chdir: /home/vagrant
+    creates: /home/vagrant/bashmarks/bashmarks.sh
+
+- name: install bashmarks
+  sudo: no
+  shell: "cd /home/vagrant/bashmarks/ && make install"
+
+- name: add bashmarks to ~/.bashrc
+  sudo: no
+  lineinfile: dest=/home/vagrant/.bashrc
+              line='source ~/.local/bin/bashmarks.sh'
