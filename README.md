@@ -61,5 +61,6 @@ postgres=# \q
 * tree
 * git bash completion
 * custom command prompt
+* [memcached](http://memcached.org)
 * [bashmarks](https://github.com/huyng/bashmarks)
 * [Heroku toolbelt](https://toolbelt.heroku.com)

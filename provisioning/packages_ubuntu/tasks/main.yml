@@ -8,6 +8,7 @@
       - git
       - make
       - tree
+      - memcached
       - nodejs
       - build-essential
       - libxslt-dev
