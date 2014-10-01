@@ -64,3 +64,8 @@ postgres=# \q
 * [memcached](http://memcached.org)
 * [bashmarks](https://github.com/huyng/bashmarks)
 * [Heroku toolbelt](https://toolbelt.heroku.com)
+ 
+
+#### Brought to you by
+
+![BigBinary](http://bigbinary.com/assets/common/logo.png)
