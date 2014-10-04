@@ -3,7 +3,7 @@
   sudo: yes
   apt: pkg={{ item }} state=installed update_cache=yes
   with_items:
-      - ack
+      - ack-grep
       - curl
       - git
       - make
@@ -20,3 +20,9 @@
 - name: Installing heroku toolbelt
   sudo: no
   shell: "wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh"
+
+- name: Rename ack-grep to ack
+  sudo: yes
+  shell: "dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep"
+  args:
+    creates: /usr/bin/ack
