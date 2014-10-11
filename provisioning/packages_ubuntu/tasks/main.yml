@@ -21,10 +21,6 @@
   sudo: no
   shell: "wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh"
 
-- name: Installing hub
-  sudo: no
-  shell: "gem install hub"
-
 - name: Rename ack-grep to ack
   sudo: yes
   shell: "dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep"
