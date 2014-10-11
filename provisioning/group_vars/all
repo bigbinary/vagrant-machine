@@ -1,5 +1,9 @@
 locale: en_US.UTF-8
 
+git:
+  config_username: neerajdotname
+  config_email: neeraj@BigBinary.com
+
 ruby:
   version: 2.1.2
 

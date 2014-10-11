@@ -13,3 +13,11 @@
     - core.mergeoptions --no-edit
     - color.status always
     - color.ui auto
+
+- name: Setting up git global username
+  sudo: no
+  shell: git config --global user.name '{{ git.config_username }}'
+
+- name: Setting up git global email
+  sudo: no
+  shell: git config --global user.email '{{ git.config_email }}'
