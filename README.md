@@ -21,7 +21,7 @@ In this README "host machine" will be used to refer to the native
 machine on which vagrant is installed. Once you ssh into the vagrant
 machine then that machine will be referred to as "guest machine".
 
-### Setting up the guest machine using vagrant
+#### Setting up the guest machine using vagrant
 
 ```
 git clone https://github.com/bigbinary/vagrant-machine.git
@@ -30,6 +30,9 @@ cd vagrant-machine
 
 Open `provisioning/group_vars/all` and change the "name" and "email" value to
 have your name and your email address.
+
+Open `provisioning/ruby/tasks/main.yml` and change the ruby verion. If
+you need more than one ruby version then add another row.
 
 Now execute following commands.
 
