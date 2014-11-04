@@ -28,8 +28,8 @@ git clone https://github.com/bigbinary/vagrant-machine.git
 cd vagrant-machine
 ```
 
-Open `provisioning/group_vars/all` and change the values to have your
-github id and github email.
+Open `provisioning/group_vars/all` and change the "name" and "email" value to
+have your name and your email address.
 
 Now execute following commands.
 
