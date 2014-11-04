@@ -26,6 +26,14 @@ machine then that machine will be referred to as "guest machine".
 ```
 git clone https://github.com/bigbinary/vagrant-machine.git
 cd vagrant-machine
+```
+
+Open `provisioning/group_vars/all` and change the values to have your
+github id and github email.
+
+Now execute following commands.
+
+```
 vagrant up
 vagrant ssh
 ```

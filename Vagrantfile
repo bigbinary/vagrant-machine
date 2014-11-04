@@ -13,8 +13,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # Filesystem configuration. Share the current folder as "/vagrant" on the guest VM
-  config.vm.synced_folder "./", "/vagrant"
-  #config.vm.synced_folder "./", "/vagrant", nfs: true
+  #config.vm.synced_folder "./", "/vagrant"
+  config.vm.synced_folder "./", "/vagrant", nfs: true
 
   config.ssh.forward_agent = true
 
@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     cfg.vm.network :forwarded_port, guest: 3000, host:3000
 
     # this is needed for nfs to work
-    # config.vm.network "private_network", type: "dhcp"
+    config.vm.network "private_network", type: "dhcp"
 
     cfg.vm.host_name = "vagrant.machine"
 
