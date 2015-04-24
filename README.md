@@ -1,7 +1,16 @@
+## Introduction
 
-## Table of Contents
+vagrant-machine builds an environment in your machine where you can install Ruby on Rails application without making any changes to your machine.
 
-* [Dependencies](#dependencies)
+### Host machine vs Guest machine
+
+In this README "host machine" will be used to refer to the native
+machine on which vagrant is installed. Once you ssh into the vagrant
+machine then that machine will be referred to as "guest machine"
+
+## Using vagrant-machine
+
+* 1. [Dependencies](#dependencies)
 * [Host vs Guest](#host-machine-vs-guest-machine)
 * [Setting up machine using vagrant](#setting-up-the-guest-machine-using-vagrant)
 * [Verify postgres is working](#verify-that-postgresql-is-working)
@@ -9,17 +18,13 @@
 
 ### Dependencies
 
-You'll need to have the following tools installed for this to work
+Please install following tools
 
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Vagrant](http://www.vagrantup.com/downloads.html)
 * [Ansible](http://docs.ansible.com/intro_installation.html)
 
-### Host machine vs Guest machine
-
-In this README "host machine" will be used to refer to the native
-machine on which vagrant is installed. Once you ssh into the vagrant
-machine then that machine will be referred to as "guest machine".
+.
 
 #### Setting up the guest machine using vagrant
 
