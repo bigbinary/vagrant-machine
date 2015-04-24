@@ -21,4 +21,4 @@
   sudo: no
   shell: /home/vagrant/.rvm/bin/rvm install {{ item }}
   with_items:
-    - ruby-2.1.3
+    - ruby-2.2.2
