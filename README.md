@@ -13,7 +13,6 @@ machine then that machine will be referred to as "guest machine"
 * 1. [Dependencies](#dependencies)
 * 2. [Setting up machine using vagrant](#setting-up-the-guest-machine-using-vagrant)
 * 3. [Using vagrant](#setting-up-the-guest-machine-using-vagrant)
-* [Installations](#installations-on-the-guest-machine)
 
 ### Dependencies
 
@@ -23,7 +22,6 @@ Please install following tools
 * [Vagrant](http://www.vagrantup.com/downloads.html)
 * [Ansible](http://docs.ansible.com/intro_installation.html)
 
-.
 
 #### Setting up the guest machine using vagrant
 
