@@ -68,24 +68,6 @@ bundle install
 ```
 
 
-### Verify that PostgreSQL is working
-
-To test if postgresql is properly working execute following commands in the guest machine.
-
-Note that password is blank for user postgres.
-
-```
-psql -h localhost -U postgres --password
-enter password:
-SELECT table_name FROM information_schema.tables WHERE table_schema='public';
-```
-
-You should see result with zero row. It means postgres is wroking fine. Now to exit out of `psql` type `\q` and hit enter.
-
-```
-postgres=# \q
-```
-
 ### Installations on the guest machine
 
 * [rvm](http://rvm.io)
@@ -103,6 +85,24 @@ postgres=# \q
 * [bashmarks](https://github.com/huyng/bashmarks)
 * [Heroku toolbelt](https://toolbelt.heroku.com)
 
+
+### Verify that PostgreSQL is working
+
+To test if postgresql is properly working execute following commands in the guest machine.
+
+Note that password is blank for user postgres.
+
+```
+psql -h localhost -U postgres --password
+enter password:
+SELECT table_name FROM information_schema.tables WHERE table_schema='public';
+```
+
+You should see result with zero row. It means postgres is wroking fine. Now to exit out of `psql` type `\q` and hit enter.
+
+```
+postgres=# \q
+```
 
 #### Brought to you by
 
