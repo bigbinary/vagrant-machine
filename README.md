@@ -50,6 +50,23 @@ Execute following commands to get into the guest machine.
 vagrant ssh
 ```
 
+Once you are inside the guest machine you will notice that the command prompt looks like this
+
+```
+vagrant ~
+```
+
+Notice that the prompt starts with `vagrant`. It means that you are in the guest machine.
+
+Now you can clone a rails repository. In the following case I am using repo name "demo" just as an example. Be sure to replace it with real repository name.
+
+```
+git clone git@github.com:xxxxxxx/demo.git
+cd demo
+gem install bundler
+bundle install
+```
+
 
 ### Verify that PostgreSQL is working
 
