@@ -10,7 +10,7 @@ machine then that machine will be referred to as "guest machine"
 
 ## Using vagrant-machine
 
-* 1. [Installing Dependencies](#dependencies)
+* 1. [Installing Dependencies](#installing-dependencies)
 * 2. [Setting up machine using vagrant](#setting-up-the-guest-machine-using-vagrant)
 * 3. [Using vagrant](#using-guest-machine)
 
