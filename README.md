@@ -11,9 +11,8 @@ machine then that machine will be referred to as "guest machine"
 ## Using vagrant-machine
 
 * 1. [Dependencies](#dependencies)
-* [Host vs Guest](#host-machine-vs-guest-machine)
-* [Setting up machine using vagrant](#setting-up-the-guest-machine-using-vagrant)
-* [Verify postgres is working](#verify-that-postgresql-is-working)
+* 2. [Setting up machine using vagrant](#setting-up-the-guest-machine-using-vagrant)
+* 3. [Using vagrant](#setting-up-the-guest-machine-using-vagrant)
 * [Installations](#installations-on-the-guest-machine)
 
 ### Dependencies
@@ -33,18 +32,21 @@ git clone https://github.com/bigbinary/vagrant-machine.git
 cd vagrant-machine
 ```
 
-Open `provisioning/group_vars/all` and change the "name" and "email" value to
+- [ ] Open `provisioning/group_vars/all` and change the "name" and "email" value to
 have your name and your email address.
 
-Open `provisioning/ruby/tasks/main.yml` and change the ruby verion. If
+- [ ] Open `provisioning/ruby/tasks/main.yml` and change the ruby verion. If
 you need more than one ruby version then add another row.
 
-Now execute following commands.
+#### Using vagrant machine
+
+Execute following commands to start vagrant machine and then to get into that machine.
 
 ```
 vagrant up
 vagrant ssh
 ```
+
 
 ### Verify that PostgreSQL is working
 
