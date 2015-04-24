@@ -36,12 +36,17 @@ have your name and your email address.
 - [ ] Open `provisioning/ruby/tasks/main.yml` and change the ruby verion. If
 you need more than one ruby version then add another row.
 
-#### Using vagrant machine
-
-Execute following commands to start vagrant machine and then to get into that machine.
+After making the changes mentioned above execute following commnad. Please note that depending on your download speed it could take upto 15 mintues for the vagrant machine to be built. During the installation process you will see lots of outputs because the script has been set to super verbose mode to show all the data it can.
 
 ```
 vagrant up
+```
+
+#### Using vagrant machine
+
+Execute following commands to get into the guest machine.
+
+```
 vagrant ssh
 ```
 
