@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "vmachine" do |cfg|
 
-    cfg.vm.network :forwarded_port, guest: 3000, host:3001
+    cfg.vm.network :forwarded_port, guest: 3000, host:3000
 
     # this is needed for nfs to work
     config.vm.network "private_network", type: "dhcp"
