@@ -67,6 +67,11 @@ gem install bundler
 bundle install
 ```
 
+### Start server 
+
+```
+bin/rails server -b 0.0.0.0
+```
 
 ### Installations on the guest machine
 
