@@ -35,10 +35,10 @@ cp -rv vagrant-machine/* .
 rm -rf vagrant-machine
 ```
 
-- [ ] Open `provisioning/group_vars/all` and change the "name" and "email" value to
+* Open `provisioning/group_vars/all` and change the "name" and "email" value to
 have your name and your email address.
 
-- [ ] Open `provisioning/ruby/tasks/main.yml` and change the ruby verion. If
+* Open `provisioning/ruby/tasks/main.yml` and change the ruby verion. If
 you need more than one ruby version then add another row.
 
 After making the changes mentioned above execute following commnad. Please note that depending on your download speed it could take upto 15 mintues for the guest machine to be built. During the installation process you will see lots of outputs because the script has been set to super verbose mode to show all the data it can.
