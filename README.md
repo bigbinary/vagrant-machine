@@ -32,6 +32,7 @@ Let's say that project directory is `wheel`.
 cd wheel
 git clone https://github.com/bigbinary/vagrant-machine.git
 cp -rv vagrant-machine/* .
+rm -rf vagrant-machine
 ```
 
 - [ ] Open `provisioning/group_vars/all` and change the "name" and "email" value to
