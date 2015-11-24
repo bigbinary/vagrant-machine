@@ -9,7 +9,7 @@ Vagrant.configure(2) do |config|
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # Filesystem configuration. Share the current folder as "/vagrant" on the guest VM
-  #config.vm.synced_folder "./", "/vagrant"
+  # config.vm.synced_folder "./", "/vagrant"
   config.vm.synced_folder "./", "/vagrant", type: 'nfs'
 
   config.ssh.forward_agent = true
@@ -23,10 +23,9 @@ Vagrant.configure(2) do |config|
 
     cfg.vm.host_name = "vagrant.machine"
 
-      cfg.vm.provision :ansible do |ansible|
-        ansible.playbook = "provisioning/playbook.yml"
-        ansible.verbose = 'vvv'
-      end
-
+    cfg.vm.provision :ansible do |ansible|
+      ansible.playbook = "provisioning/playbook.yml"
+      ansible.verbose = 'vvv'
+    end
   end
 end
