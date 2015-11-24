@@ -25,9 +25,13 @@ Please install following tools
 
 #### Setting up the guest machine using vagrant
 
+Before cloning `vagrant-machine` cd into the project directory.
+Let's say that project directory is `wheel`.
+
 ```
+cd wheel
 git clone https://github.com/bigbinary/vagrant-machine.git
-cd vagrant-machine
+cp -rv vagrant-machine/* .
 ```
 
 - [ ] Open `provisioning/group_vars/all` and change the "name" and "email" value to
@@ -58,20 +62,26 @@ vagrant ~
 
 Notice that the prompt starts with `vagrant`. It means that you are in the guest machine.
 
-Now you can clone a rails repository. In the following case I am using repo name "demo" just as an example. Be sure to replace it with real repository name.
+In the host machine the directory that had `Vagrantfile` is mapped to
+`/vagrant` in the guest machine.
 
 ```
-git clone git@github.com:xxxxxxx/demo.git
-cd demo
+cd /vagrant
 gem install bundler
 bundle install
 ```
 
-### Start server 
+### Start server
+
+For starting the server do not use `rails server`. Use
+command given below.
 
 ```
-bin/rails server -b 0.0.0.0
+./bin/rails server -b 0.0.0.0
 ```
+
+Now open browser and visit `http://localhost:3000`.
+
 
 ### Installations on the guest machine
 
