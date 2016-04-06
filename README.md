@@ -122,4 +122,4 @@ postgres=# \q
 
 #### Brought to you by
 
-![BigBinary](http://bigbinary.com/assets/common/logo.png)
+<a href='http://BigBinary.com'><img src="https://s3.amazonaws.com/bigbinary-media/horizontal/logo_blue.png" width="200px"/></a>
